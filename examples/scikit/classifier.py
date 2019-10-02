@@ -27,4 +27,4 @@ nb = MultinomialNB()
 nb.fit(counts, target)
 
 #Try the classifier
-print(nb.predict(count_vect.transform(['i hate my iphone'])))
+print(nb.predict(count_vect.transform(['i hate my iphone', 'what is an iphone', "i don't hate my iphone", 'my iphone is very cheap'])))

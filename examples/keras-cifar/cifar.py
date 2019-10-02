@@ -13,10 +13,13 @@ class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
 num_classes = len(class_names)
 
 (X_train, y_train), (X_test, y_test) = tf.keras.datasets.cifar10.load_data()
+print(X_train.shape)
+print(y_train[:10])
 
 # Convert class vectors to binary class matrices.
 y_train = tf.keras.utils.to_categorical(y_train, num_classes)
 y_test = tf.keras.utils.to_categorical(y_test, num_classes)
+print(y_train[:10])
 
 model = tf.keras.models.Sequential()
 model.add(tf.keras.layers.Flatten(input_shape=X_train.shape[1:]))
