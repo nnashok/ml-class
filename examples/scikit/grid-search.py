@@ -21,13 +21,32 @@ p = Pipeline(steps=[('counts', CountVectorizer()),
 from sklearn.model_selection import GridSearchCV
 
 
-
+"""
+Best score: 0.679
+Best parameters set:
+        counts__lowercase: True
+        counts__ngram_range: (1, 2)
+        multinomialnb__alpha: 1
+        
+Best score: 0.666
+Best parameters set:
+        counts__max_df: 0.75
+        counts__min_df: 0
+        multinomialnb__alpha: 2
+        
+Best score: 0.666
+Best parameters set:
+        counts__max_df: 0.75
+        counts__min_df: 0
+        counts__token_pattern: '(?u)\\b\\w\\w+\\b'
+        multinomialnb__alpha: 2
+"""
 parameters = {
-#    'counts__max_df': (0.5, 0.75,1.0),
-#    'counts__min_df': (0,1,2),
-#    'counts__token_pattern': ('(?u)\b\w\w+\b', '(?u)\b\w\w+\b'),
-    'counts__lowercase' : (True, False),
-    'counts__ngram_range': ((1,1), (1,2)),
+    'counts__max_df': (0.5, 0.75,1.0),
+    'counts__min_df': (0,1,2),
+    'counts__token_pattern': ('(?u)\\b\\w\\w+\\b', '(?u)\\b\\w\\w+\\b'),
+#    'counts__lowercase' : (True, False),
+#    'counts__ngram_range': ((1,1), (1,2)),
 #    'feature_selection__k': (1000, 10000, 100000)
     'multinomialnb__alpha': (0.5, 1, 2)
     }
